@@ -19,6 +19,7 @@ Rails.application.configure do
   # 例) host: 'devise-auth-ktakahashi05.c9users.io'
   config.action_mailer.default_url_options = { host: 'elites01_devise_auth-k_fukuyori.c9users.io' }
 
+  config.action_mailer.delivery_method = :letter_opener_web
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
