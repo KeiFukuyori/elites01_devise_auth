@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
+  
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  end
+  
   # get 'welcome/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
