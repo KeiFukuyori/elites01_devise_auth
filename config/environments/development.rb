@@ -17,7 +17,7 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = false
   
   # 例) host: 'devise-auth-ktakahashi05.c9users.io'
-  config.action_mailer.default_url_options = { host: 'elites01_devise_auth-k_fukuyori.c9users.io' }
+  config.action_mailer.default_url_options = { host: 'elites01_devise_auth-fukuyori123.c9users.io' }
 
   config.action_mailer.delivery_method = :letter_opener_web
 
