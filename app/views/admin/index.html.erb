@@ -3,12 +3,20 @@
         <tr>
         <th>ユーザーID</th>
         <th>ユーザー名</th>
+        <th>ロック</th>
+        <th>ロック日時</th>
         </tr>
 
 <% @users.each do |user| %>
     <tr>
     <td align = "center"><%= user.id %></td>
     <td align = "center"><%= user.email %></td>
+    <td align = "center">
+        <% if  %>
+            
+        <% end %>
+        </td>
+    <td align = "center"><%= user.locked_at %></td>
     </tr>
 <% end %>
     
