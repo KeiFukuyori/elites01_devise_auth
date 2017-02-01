@@ -1,7 +1,11 @@
 class AdminController < ApplicationController
+  
+  
   def index
     if current_user.try(:admin?)
-            @users = User.all
+      @users = User.all
+    else
+      redirect_to dashboard_path(id: current_user.id)
     end
   end
   
