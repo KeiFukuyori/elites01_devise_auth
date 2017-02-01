@@ -1,1 +1,7 @@
 <p>ここは非公開ページです</p>
+
+<% if current_user.admin? %>
+    <%= link_to "ユーザー一覧", admin_index_path %>
+<% else %>-->
+    <%= link_to "ユーザー一覧", dashboard_path(id: current_user.id) %>-->
+<% end %>
