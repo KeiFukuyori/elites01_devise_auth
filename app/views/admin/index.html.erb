@@ -1,0 +1,28 @@
+<h1>管理者専用ページ</h1>
+
+<h2>ユーザー一覧</h2>
+<table border="1" width="500" cellspacing="0" cellpadding="5" >
+        <tr>
+        <th>ユーザーID</th>
+        <th>ユーザー名</th>
+        <th>ロック</th>
+        <th>ロック日時</th>
+        </tr>
+
+<% @users.each do |user| %>
+    <tr>
+    <td align = "center"><%= user.id %></td>
+    <td align = "center"><%= user.email %></td>
+    <td align = "center">
+        <% if user.access_locked? %>
+	       <%= link_to('●', user_unlock_admin_path(user), method: :patch) %>
+	    <% else %>
+	       <%= '×' if user==current_user %>
+	       <%= link_to('×', user_lock_admin_path(user), method: :patch) unless user==current_user %>
+	    <% end %>
+        </td>
+    <td align = "center"><%= user.locked_at %></td>
+    </tr>
+<% end %>
+    
+</table>

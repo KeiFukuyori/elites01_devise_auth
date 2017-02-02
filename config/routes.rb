@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  # get 'admin/index'
+  resources :admin, only: :index do
+   member do
+    patch 'user_lock'
+    patch 'user_unlock'
+     
+    end
+  end
+#   resources :admin, only: :index
+#   post 'user_lock/:id' => 'admin#user_lock', as: 'user_lock'
+# 	post 'user_unlock/:id' => 'admin#user_unlock', as: 'user_unlock'
+  
   devise_for :users
   
   if Rails.env.development?

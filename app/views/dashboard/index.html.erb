@@ -1,1 +1,7 @@
 <p>ここは非公開ページです</p>
+
+<!--< % if current_user.admin? %>-->
+    <%= link_to "管理者専用ページ", admin_index_path %>
+<!--< % else %>-->-->
+    <!--< %= link_to "管理者専用ページ", dashboard_path(id: current_user.id) %>-->
+<!--< % end %>-->
